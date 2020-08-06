@@ -9,6 +9,7 @@ import './styles.css';
 //declaração do objeto de interface com a propriedade title como string
 interface PageHeaderProps{
     title: string;
+    description?: string;
 }
 
 //declaração typescript de um componente que vai receber o valor do title. Note que nesse caso, o componente é declarado como const, e não como function
@@ -23,6 +24,7 @@ const PageHeader:React.FC<PageHeaderProps> = (props) =>{
         </div>
         <div className="header-content">
             <strong>{props.title}</strong>
+            {props.description && <p>{props.description}</p>}
             {props.children}
         </div>
        
